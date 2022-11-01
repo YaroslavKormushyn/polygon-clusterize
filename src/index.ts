@@ -1,24 +1,15 @@
-console.log('Try npm run lint/fix!');
+import {
+  Feature,
+  Polygon,
+  Units,
+} from '@turf/helpers';
 
-const longString =
-  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut aliquet diam.';
-
-const trailing = 'Semicolon';
-
-const why = 'am I tabbed?';
-
-export function doSomeStuff(
-  withThis: string,
-  andThat: string,
-  andThose: string[]
+export function clusterizePolygons(
+  polygons: Feature<Polygon>[],
+  { distance, units = 'kilometers' }: { distance: number; units: Units },
 ) {
-  //function on one line
-  if (!andThose.length) {
-    return false;
-  }
-  console.log(withThis);
-  console.log(andThat);
-  console.dir(andThose);
-  return;
+  // TODO: add polygon clustering by distance from each other
+  // TODO: add handling of inner walls in each polygon where wall width <= distance
+  // TODO: snap polygon points in each cluster if distance between points <= distance
+  // TODO: union on each cluster to flatten geometry
 }
-// TODO: more examples
